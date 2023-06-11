@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeownerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(["prefix" => "homeowners", "as" => "homeowners"], function(){
+
+    Route::post("/validate", [HomeownerController::class, "validateData"])
+        ->name("Validate Homeowner Data");
+
 });
