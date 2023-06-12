@@ -17,7 +17,6 @@ class HomeownerController extends Controller
 
     }
 
-    //validate
     public function validateData(HomeownerDataValidationRequest $request): Response {
         return response($this->homeownerService->validateData($request->file("csvData")));
     }

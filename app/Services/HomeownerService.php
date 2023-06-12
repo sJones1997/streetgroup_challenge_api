@@ -10,10 +10,6 @@ class HomeownerService {
 
     public function validateData($csvData): array {
 
-        if($this->isCsvFile($csvData)){
-            return array();
-        }
-
         $extractedHomeownerData = $this->extractCsvData($csvData);
         return $this->formatExtractedData($extractedHomeownerData);
 

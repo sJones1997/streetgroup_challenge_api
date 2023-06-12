@@ -22,7 +22,7 @@ class HomeownerDataValidationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "csvData" => "required"
+            "csvData" => "required|mimes:csv"
         ];
     }
 }
