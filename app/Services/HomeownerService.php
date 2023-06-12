@@ -16,8 +16,8 @@ class HomeownerService {
     }
 
     function isCsvFile($filePath): bool {
-    $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-    return strtolower($extension) === 'csv';
+        $extension = pathinfo($filePath, PATHINFO_EXTENSION);
+        return strtolower($extension) === 'csv';
     }
 
     private function extractCsvData($csvData): array {
