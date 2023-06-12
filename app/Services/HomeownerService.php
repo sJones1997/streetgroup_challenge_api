@@ -14,12 +14,7 @@ class HomeownerService {
         return $this->formatExtractedData($extractedHomeownerData);
 
     }
-
-    function isCsvFile($filePath): bool {
-        $extension = pathinfo($filePath, PATHINFO_EXTENSION);
-        return strtolower($extension) === 'csv';
-    }
-
+    
     private function extractCsvData($csvData): array {
         $openedFile = fopen($csvData, "r");
         $data = array();
